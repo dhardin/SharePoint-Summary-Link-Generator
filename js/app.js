@@ -2,7 +2,6 @@ var app = app || {};
 app.dataLoadCallback = app.dataLoadCallback || [];
 app.filterOptions = app.filterOptions || false;
 app.filters = app.filters || {};
-app.testing = true;
 app.state_map = {
     fetched: false,
     fetchingData: false

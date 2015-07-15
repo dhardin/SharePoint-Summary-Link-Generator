@@ -8,9 +8,6 @@ app.Item = Backbone.Model.extend({
         iconClass: '', //ex: icon icon-magnify
         border: '',
         backgroundColor: '',
-        imgUrl: '',
-        order: 0,
-        row: 0,
-        col: 0
+        imgUrl: ''
     }
 });
