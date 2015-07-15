@@ -1,0 +1,420 @@
+/*feather icon sprite map*/
+
+.icon {
+    background: url("../img/feather-icon.gif");
+    width: 24px;
+    height: 24px;
+}
+/*level 1*/
+
+.icon.magnify {
+    background-position: 0px 0px;
+}
+
+.icon.clock {
+    background-position: -48px 0px;
+}
+
+.icon.bars {
+    background-position: -96px 0px;
+}
+
+.icon.eye {
+    background-position: -144px 0px;
+}
+
+.icon.boxes {
+    background-position: -192px 0px;
+}
+
+.icon.target {
+    background-position: -240px 0px;
+}
+
+.icon.panels {
+    background-position: -288px 0px;
+}
+
+.icon.lock {
+    background-position: -336px 0px;
+}
+
+.icon.unlock {
+    background-position: -384px 0px;
+}
+
+.icon.sections {
+    background-position: -432px 0px;
+}
+/*level 2*/
+
+.icon.sun {
+    background-position: 0px -46px;
+}
+
+.icon.cloud {
+    background-position: -48px -46px;
+}
+
+.icon.moon {
+    background-position: -96px -46px;
+}
+
+.icon.video {
+    background-position: -144px -46px;
+}
+
+.icon.cancel {
+    background-position: -192px -46px;
+}
+
+.icon.share {
+    background-position: -240px -46px;
+}
+
+.icon.folder {
+    background-position: -288px -46px;
+}
+
+.icon.disc {
+    background-position: -336px -46px;
+}
+
+.icon.duplicate {
+    background-position: -384px -46px;
+}
+
+.icon.camera {
+    background-position: -432px -46px;
+}
+/*level 3*/
+
+.icon.print {
+    background-position: 0px -92px;
+}
+
+.icon.screen {
+    background-position: -48px -92px;
+}
+
+.icon.map {
+    background-position: -96px -92px;
+}
+
+.icon.watch {
+    background-position: -144px -92px;
+}
+
+.icon.layers {
+    background-position: -192px -92px;
+}
+
+.icon.pie {
+    background-position: -240px -92px;
+}
+
+.icon.justify {
+    background-position: -288px -92px;
+}
+
+.icon.left-align {
+    background-position: -336px -92px;
+}
+
+.icon.center-align {
+    background-position: -384px -92px;
+}
+
+.icon.right-align {
+    background-position: -432px -92px;
+}
+/*level 4*/
+
+.icon.stack {
+    background-position: 0px -138px;
+}
+
+.icon.water {
+    background-position: -48px -138px;
+}
+
+.icon.cog {
+    background-position: -96px -138px;
+}
+
+.icon.copy {
+    background-position: -144px -138px;
+}
+
+.icon.heart {
+    background-position: -192px -138px;
+}
+
+.icon.paper {
+    background-position: -240px -138px;
+}
+
+.icon.navigate {
+    background-position: -288px -138px;
+}
+
+.icon.magnify-plus {
+    background-position: -336px -138px;
+}
+
+.icon.magnify-minus {
+    background-position: -384px -138px;
+}
+
+.icon.quadrants {
+    background-position: -432px -138px;
+}
+/*level 5*/
+
+.icon.circle-add {
+    background-position: 0px -184px;
+}
+
+.icon.circle-subtract {
+    background-position: -48px -184px;
+}
+
+.icon.circle-delete {
+    background-position: -96px -184px;
+}
+
+.icon.circle-check {
+    background-position: -144px -184px;
+}
+
+.icon.square-add {
+    background-position: -192px -184px;
+}
+
+.icon.square-subtract {
+    background-position: -240px -184px;
+}
+
+.icon.square-delete {
+    background-position: -288px -184px;
+}
+
+.icon.square-check {
+    background-position: -336px -184px;
+}
+
+.icon.select {
+    background-position: -384px -184px;
+}
+
+.icon.trash {
+    background-position: -432px -184px;
+}
+/*level 6*/
+
+.icon.back {
+    background-position: 0px -230px;
+}
+
+.icon.bookmart {
+    background-position: -48px -230px;
+}
+
+.icon.metrics {
+    background-position: -96px -230px;
+}
+
+.icon.brightness {
+    background-position: -144px -230px;
+}
+
+.icon.play {
+    background-position: -192px -230px;
+}
+
+.icon.pause {
+    background-position: -240px -230px;
+}
+
+.icon.stop {
+    background-position: -288px -230px;
+}
+
+.icon.record {
+    background-position: -336px -230px;
+}
+
+.icon.double-back {
+    background-position: -384px -230px;
+}
+
+.icon.double-forward {
+    background-position: -432px -230px;
+}
+/*level 7*/
+
+.icon.bag {
+    background-position: 0px -276px;
+}
+
+.icon.increase {
+    background-position: -48px -276px;
+}
+
+.icon.decrease {
+    background-position: -96px -276px;
+}
+
+.icon.clipboard {
+    background-position: -144px -276px;
+}
+
+.icon.internet {
+    background-position: -192px -276px;
+}
+
+.icon.mail {
+    background-position: -240px -276px;
+}
+
+.icon.paperclip {
+    background-position: -288px -276px;
+}
+
+.icon.present {
+    background-position: -336px -276px;
+}
+
+.icon.mic {
+    background-position: -384px -276px;
+}
+
+.icon.briefcase {
+    background-position: -432px -276px;
+}
+/*level 8*/
+
+.icon.bell {
+    background-position: 0px -322px;
+}
+
+.icon.docments {
+    background-position: -48px -322px;
+}
+
+.icon.mark {
+    background-position: -96px -322px;
+}
+
+.icon.paragraph {
+    background-position: -144px -322px;
+}
+
+.icon.mailbox {
+    background-position: -192px -322px;
+}
+
+.icon.person {
+    background-position: -240px -322px;
+}
+
+.icon.comment {
+    background-position: -288px -322px;
+}
+
+.icon.anchor {
+    background-position: -336px -322px;
+}
+
+.icon.box {
+    background-position: -384px -322px;
+}
+
+.icon.book {
+    background-position: -432px -322px;
+}
+
+/*level 9*/
+
+.icon.apps {
+    background-position: 0px -368px;
+}
+
+.icon.tag {
+    background-position: -48px -368px;
+}
+
+.icon.video-camera {
+    background-position: -96px -368px;
+}
+
+.icon.download {
+    background-position: -144px -368px;
+}
+
+.icon.upload {
+    background-position: -192px -368px;
+}
+
+.icon.image {
+    background-position: -240px -368px;
+}
+
+.icon.thermometer {
+    background-position: -288px -368px;
+}
+
+.icon.stacked-bars {
+    background-position: -336px -368px;
+}
+
+.icon.power {
+    background-position: -384px -368px;
+}
+
+.icon.increase-window {
+    background-position: -432px -368px;
+}
+
+
+/*level 10*/
+
+.icon.document {
+    background-position: 0px -414px;
+}
+
+.icon.redo {
+    background-position: -48px -414px;
+}
+
+.icon.undo {
+    background-position: -96px -414px;
+}
+
+.icon.star {
+    background-position: -144px -414px;
+}
+
+.icon.left {
+    background-position: -192px -414px;
+}
+
+.icon.right {
+    background-position: -240px -414px;
+}
+
+.icon.up {
+    background-position: -288px -414px;
+}
+
+.icon.down {
+    background-position: -336px -414px;
+}
+
+.icon.volume {
+    background-position: -384px -414px;
+}
+
+.icon.silent {
+    background-position: -432px -414px;
+}

@@ -1,0 +1,20 @@
+.circle {
+    border-radius: 50px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.row {
+    max-width: 100%;
+}
+
+.panel .subheader {
+    line-height: 1.4;
+    color: #6f6f6f;
+    font-weight: normal;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+}

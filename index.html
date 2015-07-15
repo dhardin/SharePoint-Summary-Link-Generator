@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="lib/foundation/css/foundation.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/feather-icon.css" />
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/foundation/js/foundation/foundation.js"></script>
+    <script type="text/javascript" src="lib/foundation/js/foundation/foundation.equalizer.js"></script>
+    <script type="text/javascript" src="lib/foundation/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="lib/underscore.js"></script>
+    <script type="text/javascript" src="lib/backbone.js"></script>
+    <title>SharePoint Summary Links</title>
+</head>
+
+<body>
+    <div id="main"></div>
+    <!--Templates-->
+    <script type="text/template" id="item-template-card">
+        <div class="vcard" data-equalizer-watch>
+            <li>
+                <div class="panel circle inline-block">
+                    <div class="<%=iconClass%>"></div>
+                </div>
+            </li>
+            <li class="fn">
+                <%=title%>
+            </li>
+            <li class="subheader">
+                <%=description%>
+            </li>
+        </div>
+    </script>
+    <script type="text/template" id="item-template">
+        <div class="panel" data-equalizer-watch>
+            <div class="row">
+                <div class="small-4 medium-2 large-1 columns">
+                    <div class="panel circle inline-block">
+                        <div class="<%=iconClass%>"></div>
+                    </div>
+                </div>
+                <div class="small-8 medium-10 large-11 columns">
+                    <h1><%=title%></h1>
+                </div>
+                <div class="small-12 columns">
+                    <h6 class="subheader"><%=description%></h6>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/template" id="table-item-edit-template">
+        <div class="panel" data-equalizer-watch>
+            <div class="row">
+                <div class="small-12 columns text-center">
+                    <div class="panel callout circle inline-block">
+                        <h1><a>+</a></h1>
+                    </div>
+                </div>
+                <div class="small-12 columns">
+                    <label>Title
+                        <input type="text" placeholder="large-10.columns" value="<%=title%>" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Description
+                        <textarea placeholder="small-12.columns">
+                            <%=description%>
+                        </textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/template" id="edit-item-template">
+        <div class="panel">
+            <div class="row">
+                <div class="small-12 columns text-center">
+                    <div class="panel callout circle inline-block">
+                        <h1><a>+</a></h1>
+                    </div>
+                </div>
+                <div class="small-12 columns">
+                    <label>Title
+                        <input type="text" placeholder="large-10.columns" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Description
+                        <textarea placeholder="small-12.columns"></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/template" id="collection-template">
+        <div id="items"></div>
+    </script>
+    <script type="text/template" id="noItemsTemplate">
+        <div class="text-center library-message">
+            <p>You don't seem to have any items :(</p>
+            <p>Let's try adding some!</p>
+        </div>
+    </script>
+    <script type="text/template" id="fetchingDataTemplate">
+        <div class="text-center library-message">
+            <p>Fetching data...</p>
+        </div>
+    </script>
+    <script type="text/template" id="errorTemplate">
+        <div class="text-center library-message">
+            <h1>Error</h1>
+            <h1 class="subheader">Sorry, but the requested page does not exist :(</h1>
+        </div>
+    </script>
+    <!-- Models -->
+    <script src="js/models/item.js"></script>
+    <script src="js/models/library.js"></script>
+    <!-- Views -->
+    <script src="js/views/item.js"></script>
+    <script src="js/views/item.edit.js"></script>
+    <script src="js/views/item.list.js"></script>
+    <script src="js/views/library.js"></script>
+    <script src="js/views/app.js"></script>
+    <script src="js/views/fetch.js"></script>
+    <script src="js/views/error.js"></script>
+    <!-- Application -->
+    <script src="js/data.js"></script>
+    <script src="js/data.test.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Router -->
+    <script src="js/routes/routes.js"></script>
+    <script type="text/javascript">
+    $(document).foundation({
+        equalizer: {
+            equalize_on_stack: true
+        }
+
+    });
+    </script>
+</body>
+
+</html>
