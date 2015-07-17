@@ -54,6 +54,7 @@ app.LibraryView = Backbone.View.extend({
                 collection.each(function(item) {
                     if (rowItemCount >= rowNumItems) {
                         rowNumItems = this.genRowNumItems(itemsLeft);
+                        rowNumItems = rowNumItems != 5 ? rowNumItems : 3;
                         $row = $('<div class="row" data-equalizer></div>');
                         this.$items.append($row);
                         rowItemCount = 0;
@@ -125,6 +126,8 @@ app.LibraryView = Backbone.View.extend({
             } else {
                 return 1;
             }
+        } else if (numItems === 5){
+            return 5;
         } else {
             return 4;
         }

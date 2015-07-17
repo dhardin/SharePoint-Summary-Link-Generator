@@ -48,7 +48,7 @@ app.getData = function() {
                 results = app.processResults(results);
                 //set library to results
                 app.LibraryCollection.set(results);
-             //   app.LibraryCollection.trigger('change');
+                app.LibraryCollection.trigger('change');
                 if (app.dataLoadCallback) {
                     for (i = 0; i < app.dataLoadCallback.length; i++) {
                         app.dataLoadCallback[i]();
