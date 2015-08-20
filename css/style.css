@@ -22,3 +22,11 @@
 .vcard {
 	width: 100% !important;
 }
+
+.panel img {
+    width: 100%;
+}
+
+.no-padding {
+    padding: 0;
+};

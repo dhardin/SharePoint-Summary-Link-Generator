@@ -20,10 +20,10 @@
     <div id="main"></div>
     <!--Templates-->
     <script type="text/template" id="item-template-card">
-        <a class="item" href="<%=link%>">
+        <a class="item" target="top" href="<%=link%>">
             <div class="vcard" data-equalizer-watch>
                 <li>
-                    <div class="panel circle inline-block">
+                    <div class="panel circle inline-block <%=iconClass.length == 0 ? 'no-padding' : ''%>">
                         <% if(iconClass.length == 0){%>
                             <img src="<%=imgUrl%>" />
                             <%}else{%>
