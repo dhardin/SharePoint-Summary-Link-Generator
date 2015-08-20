@@ -11,6 +11,8 @@ app.Item = Backbone.Model.extend({
         backgroundColor: '',
         imgUrl: '',
         imgBorder: '',
+        imgBorderRadius: '',
+        imgBackgroundColor: '',
         imgSize: '',
         imgDisplay: '',
         stylesheetUrl: '',

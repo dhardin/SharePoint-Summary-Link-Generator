@@ -23,13 +23,13 @@ app.ItemView = Item.extend({
             this.$el.find('.vcard').css('border-radius', this.model.get('borderRadius'));
         }
         if (this.model.get('imgBorder') != '') {
-            this.$el.find('.icon').parent('.panel').css('border', this.model.get('imgBorder'));
+            this.$el.find('.panel').css('border', this.model.get('imgBorder'));
         }
         if (this.model.get('imgBorderRadius') != '') {
-            this.$el.find('.icon').parent('.panel').css('border-radius', this.model.get('imgBorderRadius'));
+            this.$el.find('.panel').css('border-radius', this.model.get('imgBorderRadius'));
         }
         if (this.model.get('imgBackgroundColor') != '') {
-            this.$el.find('.icon').parent('.panel').css('background-color', this.model.get('imgBackgroundColor'));
+            this.$el.find('.panel').css('background-color', this.model.get('imgBackgroundColor'));
         }
         if (this.model.get('titleSize') != 1) {
             this.$el.find('.fn').css('font-size', this.model.get('titleSize') + 'rem');

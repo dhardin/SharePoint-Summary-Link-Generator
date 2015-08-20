@@ -23,7 +23,11 @@
         <div class="vcard" data-equalizer-watch>
             <li>
                 <div class="panel circle inline-block">
-                    <div class="<%=iconClass%>"></div>
+                    <% if(iconClass.length == 0){%>
+                        <img src="<%=imgUrl%>" />
+                        <%}else{%>
+                            <div class="<%=iconClass%>"></div>
+                            <%}%>
                 </div>
             </li>
             <li class="fn">

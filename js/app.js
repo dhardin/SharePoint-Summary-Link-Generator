@@ -58,7 +58,7 @@ app.getData = function() {
                         setTimeout(function() {
                             app.dataLoadCallback();
                             app.dataLoadCallback = false;
-                        }, 100);
+                        }, 1000);
 
                     }
 
@@ -90,8 +90,8 @@ app.addStylesheets = function(stylesheets) {
     if (stylesheets.length == 0) {
         return;
     }
-    var stylesheetHtml = stylesheets.length > 1 ? stylesheets.reduce(function(html, url) {
-        return html + url.length > 0 ? '<link rel="stylesheet" href="' + url + '"/>' : '';
+    var stylesheetHtml = stylesheets.length > 1 ? stylesheets.reduce(function(prev, current) {
+        return prev + current.length > 0 ? '<link rel="stylesheet" href="' + current + '"/>' : '<link rel="stylesheet" href="' +prev+ '"/>' ;
     }) : stylesheets[0].length > 0 ? '<link rel="stylesheet" href="' + stylesheets[0] + '"/>' : '';
 
     $('head').append(stylesheetHtml);
