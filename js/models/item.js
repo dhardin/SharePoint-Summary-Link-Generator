@@ -17,6 +17,7 @@ app.Item = Backbone.Model.extend({
         imgDisplay: '',
         stylesheetUrl: '',
         titleSize: 1,
-        descriptionSize: 1
+        descriptionSize: 1,
+        link: ''
     }
 });

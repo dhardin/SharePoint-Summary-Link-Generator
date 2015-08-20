@@ -20,23 +20,25 @@
     <div id="main"></div>
     <!--Templates-->
     <script type="text/template" id="item-template-card">
-        <div class="vcard" data-equalizer-watch>
-            <li>
-                <div class="panel circle inline-block">
-                    <% if(iconClass.length == 0){%>
-                        <img src="<%=imgUrl%>" />
-                        <%}else{%>
-                            <div class="<%=iconClass%>"></div>
-                            <%}%>
-                </div>
-            </li>
-            <li class="fn">
-                <%=title%>
-            </li>
-            <li class="subheader">
-                <%=description%>
-            </li>
-        </div>
+        <a class="item" href="<%=link%>">
+            <div class="vcard" data-equalizer-watch>
+                <li>
+                    <div class="panel circle inline-block">
+                        <% if(iconClass.length == 0){%>
+                            <img src="<%=imgUrl%>" />
+                            <%}else{%>
+                                <div class="<%=iconClass%>"></div>
+                                <%}%>
+                    </div>
+                </li>
+                <li class="fn">
+                    <%=title%>
+                </li>
+                <li class="subheader">
+                    <%=description%>
+                </li>
+            </div>
+        </a>
     </script>
     <script type="text/template" id="item-template">
         <div class="panel" data-equalizer-watch>
