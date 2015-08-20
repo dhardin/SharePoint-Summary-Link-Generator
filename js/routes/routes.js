@@ -17,6 +17,9 @@ var Router = Backbone.Router.extend({
     },
     setup: function(params) {
         var i, param_map = {}, param;
+        app.state_map.fetched = false;
+        app.state_map.fetchingData = false;
+
         params = params.split('&');
         for(i = 0; i < params.length; i++){
             param = params[i].split('=');
@@ -26,7 +29,7 @@ var Router = Backbone.Router.extend({
         for(key in param_map){
             app.config[key] = param_map[key];
         }
-        
+
         app.router.navigate('', true);
     },
     main: function() {
@@ -36,7 +39,7 @@ var Router = Backbone.Router.extend({
         }
         if (app.state_map.fetchingData) {
             app.router.navigate('fetch', true);
-            app.state_map.dataLoadCallback = function() {
+            app.dataLoadCallback = function() {
                 app.router.navigate('', true);
             };
             return;

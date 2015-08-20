@@ -13,6 +13,7 @@ app.Item = Backbone.Model.extend({
         imgBorder: '',
         imgSize: '',
         imgDisplay: '',
+        stylesheetUrl: '',
         titleSize: 1,
         descriptionSize: 1
     }

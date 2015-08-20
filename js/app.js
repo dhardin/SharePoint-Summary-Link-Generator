@@ -10,9 +10,10 @@ app.state_map = {
 
 app.processResults = function(results) {
     var temp_results = app.spData.processData(results),
-        index = 0, i = 0;
+        index = 0,
+        i = 0;
 
-        results = [];
+    results = [];
 
     for (i = 0; i < temp_results.length; i++) {
         if (Object.keys(temp_results[i]).length == 0) {
@@ -37,28 +38,37 @@ app.processResults = function(results) {
 app.getData = function() {
     var i;
     app.LibraryCollection = app.LibraryCollection || new app.Library([]);
-    app.fetchingData = true;
+    app.state_map.fetchingData = true;
     if (!app.config.testing) {
         app.spData.getData([{
-            url: app.config.url,
-            type: 'list',
-            guid: app.config.guid,
-            callback: function(results) {
-                app.state_map.fetchingData = false;
-                results = app.processResults(results);
-                //set library to results
-                app.LibraryCollection.set(results);
-                app.LibraryCollection.trigger('change');
-                if (app.dataLoadCallback) {
-                    for (i = 0; i < app.dataLoadCallback.length; i++) {
-                        app.dataLoadCallback[i]();
+                url: app.config.url,
+                type: 'list',
+                guid: app.config.guid,
+                callback: function(results) {
+                    var stylesheets = [];
+                    app.state_map.fetchingData = false;
+                    app.state_map.fetched = true;
+                    results = app.processResults(results);
+                    //set library to results
+                    app.LibraryCollection.set(results);
+                    stylesheets = _.unique(_.pluck(app.LibraryCollection.toJSON(), 'stylesheetUrl'));
+                    app.addStylesheets(stylesheets);
+
+                    if (app.dataLoadCallback) {
+                        setTimeout(function() {
+                            app.dataLoadCallback();
+                            app.dataLoadCallback = false;
+                        }, 100);
+
                     }
-                    app.dataLoadCallback = false;
+
+
+
                 }
-            }
-        }], 0, function() {
-            app.state_map.fetched = true;
-        });
+            }], 0,
+            function() {
+                app.state_map.fetched = true;
+            });
     } else {
         //simulate server fetch
         setTimeout(function() {
@@ -74,4 +84,16 @@ app.getData = function() {
             }
         }, 100);
     }
+};
+
+app.addStylesheets = function(stylesheets) {
+    if (stylesheets.length == 0) {
+        return;
+    }
+    var stylesheetHtml = stylesheets.length > 1 ? stylesheets.reduce(function(html, url) {
+        return html + url.length > 0 ? '<link rel="stylesheet" href="' + url + '"/>' : '';
+    }) : stylesheets[0].length > 0 ? '<link rel="stylesheet" href="' + stylesheets[0] + '"/>' : '';
+
+    $('head').append(stylesheetHtml);
+
 };
