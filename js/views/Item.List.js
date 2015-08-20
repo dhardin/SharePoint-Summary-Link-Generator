@@ -22,6 +22,9 @@ app.ItemView = Item.extend({
         if (this.model.get('borderRadius') != '') {
             this.$el.find('.vcard').css('border-radius', this.model.get('borderRadius'));
         }
+           if (this.model.get('backgroundColor') != '') {
+            this.$el.find('.vcard').css('background-color', this.model.get('backgroundColor'));
+        }
         if (this.model.get('imgBorder') != '') {
             this.$el.find('.panel').css('border', this.model.get('imgBorder'));
         }
