@@ -3,6 +3,7 @@ var app = app || {};
 var Router = Backbone.Router.extend({
     routes: {
         '': 'main',
+        'setup/:params': 'setup',
         'new/': 'editItem',
         'new/*': 'editItem',
         'edit/:id': 'editItem',
@@ -14,16 +15,29 @@ var Router = Backbone.Router.extend({
     initialize: function(options) {
         this.AppView = options.AppView;
     },
+    setup: function(params) {
+        var i, param_map = {}, param;
+        params = params.split('&');
+        for(i = 0; i < params.length; i++){
+            param = params[i].split('=');
+            param_map[param[0]] = param[1];
+        }
 
+        for(key in param_map){
+            app.config[key] = param_map[key];
+        }
+        
+        app.router.navigate('', true);
+    },
     main: function() {
-    	 if (!app.state_map.fetched) {
+        if (!app.state_map.fetched) {
             //fetch data from server
             app.getData();
         }
-          if (app.state_map.fetchingData) {
+        if (app.state_map.fetchingData) {
             app.router.navigate('fetch', true);
-              app.state_map.dataLoadCallback = function() {
-                    app.router.navigate('', true);
+            app.state_map.dataLoadCallback = function() {
+                app.router.navigate('', true);
             };
             return;
         }
@@ -39,46 +53,7 @@ var Router = Backbone.Router.extend({
         var fetchingDataView = new app.FetchingDataView();
 
         this.AppView.showView(fetchingDataView);
-    },
-    editItem: function(id) {
-        var editUserPermissionView, item;
-
-        app.state_map.fetchId = id || "";
-        if (!app.state_map.fetched) {
-            //fetch data from server
-            app.getData();
-        }
-
-        if (app.state_map.fetchingData) {
-            app.router.navigate('fetch', true);
-
-            app.state_map.dataLoadCallback = function() {
-                if (app.state_map.fetchId) {
-                    app.router.navigate('edit/' + app.state_map.fetchId, true);
-                } else {
-                    app.router.navigate('edit/', true);
-                }
-            };
-            return;
-        } else if (id) {
-
-            item = app.LibraryCollection.findWhere({
-                id: id
-            });
-            if (!item) {
-                app.router.navigate('edit/', true);
-                return;
-            }
-        } else {
-            item = new app.Item();
-        }
-        editItemView = new app.EditItemView({
-            model: item
-        });
-
-        this.AppView.showView(editItemView);
     }
-
 });
 
 

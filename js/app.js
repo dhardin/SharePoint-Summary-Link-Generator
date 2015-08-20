@@ -38,7 +38,7 @@ app.getData = function() {
     var i;
     app.LibraryCollection = app.LibraryCollection || new app.Library([]);
     app.fetchingData = true;
-    if (!app.testing) {
+    if (!app.config.testing) {
         app.spData.getData([{
             url: app.config.url,
             type: 'list',

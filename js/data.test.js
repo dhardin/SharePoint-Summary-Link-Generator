@@ -1,10 +1,19 @@
 var app = app || {};
 
 app.test_data = [{
-    title: 'foo',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Title',
+    titleSize: 2,
+    description: 'example item with default styling settings modified.',
+    descriptionSize: 1.5,
     iconUrl: 'img/feather-icon.gif',
     iconClass: 'icon person',
+    imgDisplay: 'inline-block',
+    imgSize: 'cover',
+    border: '3px solid #f00',
+    borderRadius: '20%',
+    imgBorder: '1px solid #f0f',
+    imgBorderRadius: '0',
+    imgBackgroundColor: 'grey',
     order: 0,
     row: 0,
     col: 0,

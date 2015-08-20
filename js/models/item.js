@@ -7,7 +7,13 @@ app.Item = Backbone.Model.extend({
         title: '',
         iconClass: '', //ex: icon icon-magnify
         border: '',
+        borderRadius: '',
         backgroundColor: '',
-        imgUrl: ''
+        imgUrl: '',
+        imgBorder: '',
+        imgSize: '',
+        imgDisplay: '',
+        titleSize: 1,
+        descriptionSize: 1
     }
 });
