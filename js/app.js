@@ -54,13 +54,15 @@ app.getData = function() {
                     stylesheets = _.unique(_.pluck(app.LibraryCollection.toJSON(), 'stylesheetUrl'));
                     app.addStylesheets(stylesheets);
 
-                    if (app.dataLoadCallback) {
-                        setTimeout(function() {
+
+                    setTimeout(function() {
+                        if (app.dataLoadCallback) {
                             app.dataLoadCallback();
                             app.dataLoadCallback = false;
-                        }, 1000);
+                        }
+                    }, 1000);
 
-                    }
+
 
 
 
@@ -91,7 +93,7 @@ app.addStylesheets = function(stylesheets) {
         return;
     }
     var stylesheetHtml = stylesheets.length > 1 ? stylesheets.reduce(function(prev, current) {
-        return prev + current.length > 0 ? '<link rel="stylesheet" href="' + current + '"/>' : '<link rel="stylesheet" href="' +prev+ '"/>' ;
+        return prev + current.length > 0 ? '<link rel="stylesheet" href="' + current + '"/>' : '<link rel="stylesheet" href="' + prev + '"/>';
     }) : stylesheets[0].length > 0 ? '<link rel="stylesheet" href="' + stylesheets[0] + '"/>' : '';
 
     $('head').append(stylesheetHtml);

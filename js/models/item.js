@@ -3,8 +3,10 @@ var app = app || {};
 app.Item = Backbone.Model.extend({
     defaults: {
         description: '',
+        descriptionCenter: false,
         id: '',
         title: '',
+        titleCenter: false,
         iconClass: '', //ex: icon icon-magnify
         border: '',
         borderRadius: '',
@@ -14,6 +16,7 @@ app.Item = Backbone.Model.extend({
         imgBorderRadius: '',
         imgBackgroundColor: '',
         imgSize: '',
+        imgCenter: false,
         imgDisplay: '',
         stylesheetUrl: '',
         titleSize: 1,

@@ -25,6 +25,9 @@ app.ItemView = Item.extend({
            if (this.model.get('backgroundColor') != '') {
             this.$el.find('.vcard').css('background-color', this.model.get('backgroundColor'));
         }
+           if (this.model.get('imgCenter')) {
+            this.$el.find('.panel').parent().css('text-align', 'center');
+        }
         if (this.model.get('imgBorder') != '') {
             this.$el.find('.panel').css('border', this.model.get('imgBorder'));
         }
@@ -37,8 +40,14 @@ app.ItemView = Item.extend({
         if (this.model.get('titleSize') != 1) {
             this.$el.find('.fn').css('font-size', this.model.get('titleSize') + 'rem');
         }
+        if (this.model.get('titleCenter')) {
+            this.$el.find('.fn').css('text-align',  'center');
+        }
         if (this.model.get('descriptionSize') != 1) {
             this.$el.find('.subheader').css('font-size', this.model.get('descriptionSize') + 'rem');
+        }
+         if (this.model.get('descriptionCenter')) {
+            this.$el.find('.subheader').css('text-align',  'center');
         }
 
         return this;
