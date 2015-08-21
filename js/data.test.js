@@ -14,6 +14,7 @@ app.test_data = [{
     imgBorder: '1px solid #f0f',
     imgBorderRadius: '0',
     imgBackgroundColor: 'grey',
+    stylesheetUrl: 'css/feather-icon.css',
     order: 0,
     row: 0,
     col: 0,
@@ -27,7 +28,8 @@ app.test_data = [{
     order: 0,
     row: 0,
     col: 0,
-        id:2
+        id:2,
+            titleSize:3,
 },{
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',

@@ -6,7 +6,7 @@ var defaults = (new app.Item).defaults,
 app.config = {
     url: '',
     guid: '',
-    testin: false
+    testing: true
 };
 
 app.property_map = {};

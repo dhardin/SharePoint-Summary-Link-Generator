@@ -22,10 +22,10 @@ app.ItemView = Item.extend({
         if (this.model.get('borderRadius') != '') {
             this.$el.find('.vcard').css('border-radius', this.model.get('borderRadius'));
         }
-           if (this.model.get('backgroundColor') != '') {
+        if (this.model.get('backgroundColor') != '') {
             this.$el.find('.vcard').css('background-color', this.model.get('backgroundColor'));
         }
-           if (this.model.get('imgCenter')) {
+        if (this.model.get('imgCenter')) {
             this.$el.find('.panel').parent().css('text-align', 'center');
         }
         if (this.model.get('imgBorder') != '') {
@@ -41,14 +41,23 @@ app.ItemView = Item.extend({
             this.$el.find('.fn').css('font-size', this.model.get('titleSize') + 'rem');
         }
         if (this.model.get('titleCenter')) {
-            this.$el.find('.fn').css('text-align',  'center');
+            this.$el.find('.fn').css('text-align', 'center');
         }
         if (this.model.get('descriptionSize') != 1) {
             this.$el.find('.subheader').css('font-size', this.model.get('descriptionSize') + 'rem');
         }
-         if (this.model.get('descriptionCenter')) {
-            this.$el.find('.subheader').css('text-align',  'center');
+        if (this.model.get('descriptionCenter')) {
+            this.$el.find('.subheader').css('text-align', 'center');
         }
+        (function(that) {
+            setTimeout(function() {
+                if (that.model.get('iconClass').length > 0) {
+                    that.$el.find('.iconContainer').css({width: that.$el.find('.panel').outerWidth(), height: that.$el.find('.panel').outerHeight()});
+                    that.$el.find('.fn').css({height: that.$el.find('.v-center').height()});
+                }
+            }, 10);
+        })(this);
+
 
         return this;
     },

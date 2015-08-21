@@ -29,4 +29,22 @@
 
 .no-padding {
     padding: 0;
-};
+}
+
+.v-center {
+    position: relative;
+}
+.v-center .panel{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.v-center .iconContainer {
+   
+}
+
+.v-center li {
+    display: inline-block;
+
+}

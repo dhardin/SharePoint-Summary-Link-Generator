@@ -75,15 +75,17 @@ app.getData = function() {
         //simulate server fetch
         setTimeout(function() {
             app.state_map.fetchingData = false;
+            app.state_map.fetched = true;
             results = app.test_data || [];
             app.LibraryCollection.set(results);
-            app.LibraryCollection.trigger('change');
-            if (app.dataLoadCallback) {
-                for (i = 0; i < app.dataLoadCallback.length; i++) {
-                    app.dataLoadCallback[i]();
+            stylesheets = _.unique(_.pluck(app.LibraryCollection.toJSON(), 'stylesheetUrl'));
+            app.addStylesheets(stylesheets);
+            setTimeout(function() {
+                if (app.dataLoadCallback) {
+                    app.dataLoadCallback();
+                    app.dataLoadCallback = false;
                 }
-                app.dataLoadCallback = false;
-            }
+            }, 1000);
         }, 100);
     }
 };
