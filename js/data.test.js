@@ -1,7 +1,7 @@
 var app = app || {};
 
-app.test_data = [{
-    title: 'Title',
+app.test_data = [{size: '50',
+    title: 'Title Blah!',
     titleSize: 2,
     description: 'example item with default styling settings modified.',
     descriptionSize: 1.5,
@@ -14,13 +14,14 @@ app.test_data = [{
     imgBorder: '1px solid #f0f',
     imgBorderRadius: '0',
     imgBackgroundColor: 'grey',
+    imgCenter: true,
     stylesheetUrl: 'css/feather-icon.css',
     order: 0,
     row: 0,
     col: 0,
     id:1
 
-}, {
+}, {size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -30,7 +31,7 @@ app.test_data = [{
     col: 0,
         id:2,
             titleSize:3,
-},{
+},{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -39,7 +40,7 @@ app.test_data = [{
     row: 0,
     col: 0,
         id:3
-},{
+},{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -49,7 +50,7 @@ app.test_data = [{
     col: 0,
         id:4
 },
-{
+{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -59,7 +60,7 @@ app.test_data = [{
     col: 0,
         id:5
 },
-{
+{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -68,7 +69,7 @@ app.test_data = [{
     row: 0,
     col: 0,
         id:6
-},{
+},{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -78,7 +79,7 @@ app.test_data = [{
     col: 0,
         id:56
 },
-{
+{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',
@@ -87,7 +88,7 @@ app.test_data = [{
     row: 0,
     col: 0,
         id:63
-},{
+},{size: '50',
     title: 'bar',
     description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     iconUrl: 'img/feather-icon.gif',

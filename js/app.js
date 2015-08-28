@@ -61,11 +61,6 @@ app.getData = function() {
                             app.dataLoadCallback = false;
                         }
                     }, 1000);
-
-
-
-
-
                 }
             }], 0,
             function() {
@@ -101,3 +96,4 @@ app.addStylesheets = function(stylesheets) {
     $('head').append(stylesheetHtml);
 
 };
+

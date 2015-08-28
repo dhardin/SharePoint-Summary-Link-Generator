@@ -4,16 +4,29 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta charset="utf-8" />
+    <title>SharePoint Summary Links</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="lib/foundation/css/foundation.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!--<link rel="stylesheet" type="text/css" href="css/feather-icon.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/feather-icon.css" />
     <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="js/polyfill.js"></script>
     <script type="text/javascript" src="lib/foundation/js/foundation/foundation.js"></script>
     <script type="text/javascript" src="lib/foundation/js/foundation/foundation.equalizer.js"></script>
-    <script type="text/javascript" src="lib/foundation/js/vendor/modernizr.js"></script>
     <script type="text/javascript" src="lib/underscore.js"></script>
     <script type="text/javascript" src="lib/backbone.js"></script>
-    <title>SharePoint Summary Links</title>
+    <script type="text/javascript" src="lib/foundation/js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="lib/rem.min.js"></script>
+    <script type="text/javascript">
+    if (document.documentMode < 9) {
+        $.getScript("lib/pie.js", function() {
+            console.log("Running pie.js");
+        });
+        $.getScript("lib/respond.js", function() {
+            console.log("Running respond.js");
+        });
+    }
+    </script>
 </head>
 
 <body>
@@ -22,66 +35,54 @@
     <script type="text/template" id="item-template-card">
         <a class="item" target="top" href="<%=link%>">
             <div class="vcard" data-equalizer-watch>
-                <% if(iconClass.length > 0){%>
-                    <div class="v-center">
-                        <%}%>
-                            <li class="iconContainer">
-                                <div class="panel circle inline-block <%=iconClass.length == 0 ? 'no-padding' : ''%>">
-                         
-                                    <% if(iconClass.length == 0){%>
-                                        <img src="<%=imgUrl%>" />
-                                        <%}else{%>
-                                            <div class="<%=iconClass%>"></div>
-                                            <%}%>
-                                </div>
-                            </li>
-                            <li class="fn">
-                                <%=title%>
-                            </li>
-                            <% if(iconClass.length > 0){%>
-                    </div>
-                    <%}%>
+                <% if(iconClass.length == 0){%>
+                    <li class="iconContainer">
+                        <div class="panel circle inline-block no-padding">
+                            <img class="full-img" src="<%=imgUrl%>" />
+                        </div>
+                    </li>
+                    <li class="fn">
+                        <%=title%>
+                    </li>
+                    <li class="subheader">
+                        <%=description%>
+                    </li>
+                    <%}else{%>
+                        <li>
+                            <span class="<%=imgCenter.toString() == 'true' ? 'h-center' : 'v-align'%> iconContainer">
+                                    <div class="panel circle inline-block">
+                                        <div class="icon-img-container"><img class="icon-img" /></div>
+                                    </div>
+                                </span>
+                            <span class="<%=imgCenter.toString() == 'true' ? 'h-center' : 'v-align'%> fn">
+                                    <%=title%>
+                                </span>
+                        </li>
                         <li class="subheader">
                             <%=description%>
                         </li>
+                        <%}%>
             </div>
         </a>
     </script>
-    <script type="text/template" id="item-template">
-        <div class="panel" data-equalizer-watch>
-            <div class="row">
-                <div class="small-4 medium-2 large-1 columns">
-                    <div class="panel circle inline-block">
-                        <div class="<%=iconClass%>"></div>
-                    </div>
-                </div>
-                <div class="small-8 medium-10 large-11 columns">
-                    <h1><%=title%></h1>
-                </div>
-                <div class="small-12 columns">
-                    <h6 class="subheader"><%=description%></h6>
-                </div>
-            </div>
-        </div>
-    </script>
     <script type="text/template" id="table-item-edit-template">
-        <div class="panel" data-equalizer-watch>
+        <div class="panel container" data-equalizer-watch>
             <div class="row">
-                <div class="small-12 columns text-center">
+                <div class="col-sm-12 text-center">
                     <div class="panel callout circle inline-block">
                         <h1><a>+</a></h1>
                     </div>
                 </div>
-                <div class="small-12 columns">
+                <div class="col-sm-12">
                     <label>Title
-                        <input type="text" placeholder="large-10.columns" value="<%=title%>" />
+                        <input type="text" placeholder="col-lg-10.columns" value="<%=title%>" />
                     </label>
                 </div>
             </div>
             <div class="row">
-                <div class="small-12 columns">
+                <div class="col-sm-12">
                     <label>Description
-                        <textarea placeholder="small-12.columns">
+                        <textarea placeholder="col-sm-12.columns">
                             <%=description%>
                         </textarea>
                     </label>
@@ -90,30 +91,30 @@
         </div>
     </script>
     <script type="text/template" id="edit-item-template">
-        <div class="panel">
+        <div class="panel container">
             <div class="row">
-                <div class="small-12 columns text-center">
+                <div class="col-sm-12 text-center">
                     <div class="panel callout circle inline-block">
                         <h1><a>+</a></h1>
                     </div>
                 </div>
-                <div class="small-12 columns">
+                <div class="col-sm-12">
                     <label>Title
-                        <input type="text" placeholder="large-10.columns" />
+                        <input type="text" placeholder="col-lg-10.columns" />
                     </label>
                 </div>
             </div>
             <div class="row">
-                <div class="small-12 columns">
+                <div class="col-sm-12">
                     <label>Description
-                        <textarea placeholder="small-12.columns"></textarea>
+                        <textarea placeholder="col-sm-12.columns"></textarea>
                     </label>
                 </div>
             </div>
         </div>
     </script>
     <script type="text/template" id="collection-template">
-        <div id="items"></div>
+        <div class="container" id="items"></div>
     </script>
     <script type="text/template" id="noItemsTemplate">
         <div class="text-center library-message">

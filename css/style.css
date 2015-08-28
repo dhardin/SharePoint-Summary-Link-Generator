@@ -20,10 +20,10 @@
 }
 
 .vcard {
-	width: 100% !important;
+    width: 100% !important;
 }
 
-.panel img {
+.panel .full-img {
     width: 100%;
 }
 
@@ -31,20 +31,28 @@
     padding: 0;
 }
 
-.v-center {
-    position: relative;
-}
-.v-center .panel{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.v-center .iconContainer {
-   
-}
-
-.v-center li {
+.v-align {
+    vertical-align: middle;
     display: inline-block;
+}
 
+.h-center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.icon-img {
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    max-width: inherit;
+}
+.icon-img-container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }

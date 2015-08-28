@@ -6,7 +6,8 @@ var defaults = (new app.Item).defaults,
 app.config = {
     url: '',
     guid: '',
-    testing: true
+    testing: true,
+    max_row_col: 4
 };
 
 app.property_map = {};

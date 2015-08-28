@@ -78,9 +78,9 @@ app.LibraryView = Backbone.View.extend({
                 this.renderItem(item);
             }, this);
         }
-        $(window).on('resize',function(e){
-        	Foundation.libs.equalizer.equalize($('#items').find('.row'));
-        });
+         $(window).on('resize',function(e){
+         	Foundation.libs.equalizer.equalize($('#items').find('.row'));
+         });
         setTimeout(function(){
         	$(window).trigger('resize');
         },10);
@@ -96,7 +96,7 @@ app.LibraryView = Backbone.View.extend({
             model: item
         });
 
-        $item = $('<div class="' + responsiveClasses + ' columns" ></div>');
+        $item = $('<div class="' + responsiveClasses + '" ></div>');
 
         $item.append(itemView.render().el);
         $target.append($item).appendTo(this.$items);
@@ -104,15 +104,15 @@ app.LibraryView = Backbone.View.extend({
     genResponsiveClasses: function(numItems) {
         switch (numItems) {
             case 1:
-                return 'small-12';
+                return 'col-xs-12';
             case 2:
-                return 'small-6';
+                return 'col-xs-6';
             case 3:
-                return 'small-12 medium-4';
+                return 'col-xs-12 col-sm-4';
             case 4:
-                return 'small-6 medium-3';
+                return 'col-xs-6 col-sm-3';
             default:
-                return 'small-6 medium-3';
+                return 'col-xs-6 col-sm-3';
         }
     },
     genRowNumItems: function(numItems) {
@@ -129,7 +129,7 @@ app.LibraryView = Backbone.View.extend({
         } else if (numItems === 5){
             return 5;
         } else {
-            return 4;
+            return parseInt(app.config.max_row_col, 10);
         }
     },
     search: function(options) {
